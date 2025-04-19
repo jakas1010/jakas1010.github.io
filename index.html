@@ -1,162 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ketan Agarwal | Embedded Systems Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
+    :root {
+      --primary: #003366;
+      --accent: #1a73e8;
+      --background: #f9f9f9;
+      --text: #333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      max-width: 960px;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--background);
+      color: var(--text);
+      padding-top: 70px;
+      line-height: 1.7;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: white;
+      border-bottom: 1px solid #ddd;
+      z-index: 10;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 20px;
+      color: var(--primary);
+    }
+
+    nav a {
+      margin-left: 20px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 1000px;
       margin: auto;
-      padding: 30px;
-      line-height: 1.6;
+      padding: 40px 20px;
     }
-    h1, h2, h3 {
-      color: #2c3e50;
+
+    section {
+      margin-bottom: 60px;
+      animation: fadeInUp 0.8s ease both;
     }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      border-left: 5px solid var(--accent);
+      padding-left: 10px;
+    }
+
     a {
-      color: #2980b9;
+      color: var(--accent);
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
     ul {
       margin-left: 20px;
     }
-    .section {
-      margin-bottom: 40px;
+
+    .icon {
+      margin-right: 6px;
     }
-    .subheading {
-      font-weight: bold;
-      margin-top: 8px;
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .contact-list li {
+      margin-bottom: 8px;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 16px;
+      }
+      nav a {
+        margin-left: 10px;
+        font-size: 14px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>Ketan Agarwal</h1>
-  <p>Electronics & VLSI Enthusiast | Embedded Systems Developer | M.Tech (R) Aspirant</p>
+  <header>
+    <h1>Ketan Agarwal</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Internships</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <div class="section">
-    <h2>About Me</h2>
-    <p>
-      I’m passionate about Embedded Systems and Electronics, with hands-on experience in medical-grade systems, STM32 programming, GUI development, and circuit design. I’ve interned at prestigious institutions like IISc Bangalore and ISRO-PRL, and currently hold a Design Patent from the Government of India for a warehouse robot.
-    </p>
-  </div>
+  <main>
 
-  <div class="section">
-    <h2>Projects</h2>
-    <ul>
-      <li>
-        <strong>1. Warehouse Robot</strong> (NewGen IEDC project)  
-        <br>✓ Design Patent No. 400370-001 granted  
-        <br><a href="http://bit.ly/warehouse-robo">View Report</a>
-      </li>
-      <li>
-        <strong>2. Final Year Project: Quad-SPI + GUI</strong>  
-        STM32 interfacing with NOR Flash using Quad-SPI for high-speed memory read/write. GUI for user interaction.  
-        <br><a href="https://bit.ly/FinalYearProjectKetan">View Project</a>
-      </li>
-      <li>
-        <strong>3. Sun Tracking System (ISRO-PRL)</strong>  
-        Designed a real-time sun tracking algorithm using Raspberry Pi for solar flare studies.  
-        <br><a href="https://bit.ly/Sun-tracking-system-ISRO">View Simulation</a>
-      </li>
-      <li>
-        <strong>4. Insulin Pump System (IISc)</strong>  
-        Embedded driver development, GUI and control algorithm design for low-powered medical-grade insulin pump.
-      </li>
-    </ul>
-  </div>
+    <section id="about">
+      <h2>👋 About Me</h2>
+      <p>
+        I'm an Electronics & Embedded Systems enthusiast with hands-on experience in STM32, GUI development, and real-time applications. I’ve worked at IISc and ISRO, and hold a design patent for an autonomous warehouse robot. My passion lies in solving real-world problems through hardware-software integration.
+      </p>
+    </section>
 
-  <div class="section">
-    <h2>Experience</h2>
-    <ul>
-      <li>
-        <strong>IISc Bangalore – UTSAAH Lab, CPDM</strong>  
-        Embedded Intern (Feb 2024 – Aug 2024)  
-        <br>• GUI & algorithm design for a medical insulin pump  
-        <br>• Embedded driver coding, documentation under medical standards
-      </li>
-      <li>
-        <strong>ISRO – Physical Research Lab (PRL), Udaipur</strong>  
-        Intern under Scientist ‘SD’ Kushagra Upadhyay (June–July 2023)  
-        <br>• Developed Sun Tracking System using Raspberry Pi
-      </li>
-      <li>
-        <strong>Airport CNS Internship, Udaipur</strong>  
-        (July–Aug 2022)  
-        <br>• Learned about ILS, DVOR, VHF, radar systems, and navigation safety equipment
-      </li>
-    </ul>
-  </div>
+    <section id="projects">
+      <h2>📁 Featured Projects</h2>
+      <div class="project-grid">
+        <div class="card">
+          <h3>Warehouse Robot</h3>
+          <p>Design Patent No. 400370-001 granted by Government of India.</p>
+          <a href="http://bit.ly/warehouse-robo">View Report</a>
+        </div>
+        <div class="card">
+          <h3>STM32 QuadSPI + GUI</h3>
+          <p>Final year project with high-speed NOR Flash interfacing using STM32 and GUI for user interaction.</p>
+          <a href="https://bit.ly/FinalYearProjectKetan">View Project</a>
+        </div>
+        <div class="card">
+          <h3>Sun Tracking System (ISRO)</h3>
+          <p>Solar tracking algorithm using Raspberry Pi for flare observation under PRL, ISRO.</p>
+          <a href="https://bit.ly/Sun-tracking-system-ISRO">View Details</a>
+        </div>
+        <div class="card">
+          <h3>Insulin Pump GUI (IISc)</h3>
+          <p>Driver code, GUI design, and algorithm development for low-power embedded medical device.</p>
+        </div>
+      </div>
+    </section>
 
-  <div class="section">
-    <h2>Skills & Tools</h2>
-    <ul>
-      <li><strong>Languages:</strong> C++, Python, OOPs</li>
-      <li><strong>Software:</strong> MATLAB, STM32CubeMX, GitHub, Arduino IDE</li>
-      <li><strong>Hardware:</strong> STM32, ESP32, Raspberry Pi, Arduino</li>
-      <li><strong>Domains:</strong> Embedded Systems, VLSI, Analog & Digital Electronics</li>
-    </ul>
-  </div>
+    <section id="experience">
+      <h2>🧪 Internships</h2>
+      <ul>
+        <li><strong>IISc Bangalore – UTSAAH Lab</strong> (2024)<br>
+          Embedded system intern working on medical-grade devices</li>
+        <li><strong>ISRO – PRL Udaipur</strong> (2023)<br>
+          Developed a sun tracking system under Scientist SD</li>
+        <li><strong>Maharana Pratap Airport – CNS</strong> (2022)<br>
+          Learned real-world electronics in air navigation systems</li>
+      </ul>
+    </section>
 
-  <div class="section">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>B.Tech in Electronics & Communication Engineering</strong>  
-        CTAE, MPUAT Udaipur (2020–2024)  
-        <br>CGPA: 7.70 / 10
-      </li>
-      <li><strong>12th CBSE – KV No.1, Pratapnagar</strong>  
-        Year: 2020, Score: 94.8%
-      </li>
-      <li><strong>10th CBSE – St. Teresa Sr. Sec. School</strong>  
-        Year: 2018, Score: 83.6%
-      </li>
-    </ul>
-  </div>
+    <section id="skills">
+      <h2>🛠️ Technical Skills</h2>
+      <ul>
+        <li><i class="fas fa-code icon"></i>Languages: C++, Python, OOP</li>
+        <li><i class="fas fa-microchip icon"></i>Embedded Tools: STM32, ESP32, Raspberry Pi, Arduino</li>
+        <li><i class="fas fa-laptop-code icon"></i>Software: MATLAB, STM32CubeMX, GitHub</li>
+        <li><i class="fas fa-layer-group icon"></i>Domains: Embedded Systems, VLSI, Analog/Digital Electronics</li>
+      </ul>
+    </section>
 
-  <div class="section">
-    <h2>Volunteering</h2>
-    <ul>
-      <li><strong>Rail Bikash Manch (NGO)</strong> – Sept 2023 – Oct 2023</li>
-      <li><strong>Team Aashraya (NGO)</strong> – Oct 2023 – Present</li>
-    </ul>
-  </div>
+    <section>
+      <h2>🎓 Education</h2>
+      <ul>
+        <li>B.Tech ECE, CTAE Udaipur – CGPA: 7.70/10 (2020–2024)</li>
+        <li>12th CBSE, KV No.1 – 94.8% (2020)</li>
+        <li>10th CBSE, St. Teresa – 83.6% (2018)</li>
+      </ul>
+    </section>
 
-  <div class="section">
-    <h2>Mentors</h2>
-    <ul>
-      <li><strong>Kushagra Upadhyay</strong>, Scientist (SD), PRL ISRO  
-        <br>Phone: +91 6375973051 | Email: kushagraupadhyay77@gmail.com
-      </li>
-      <li><strong>Dr. Navneet Agrawal</strong>, HOD-ECE, CTAE, Udaipur  
-        <br>Phone: +91 9828276279 | Email: navneetctae@gmail.com
-      </li>
-    </ul>
-  </div>
+    <section>
+      <h2>🌱 Volunteering</h2>
+      <ul>
+        <li>Rail Bikash Manch NGO – 2023</li>
+        <li>Team Aashraya NGO – 2023 to Present</li>
+      </ul>
+    </section>
 
-  <div class="section">
-    <h2>Hobbies</h2>
-    <p>Chess, Cycling, Traveling, Exploring Nature, Reading Tech & Novels</p>
-  </div>
+    <section>
+      <h2>🧑‍🏫 Mentors</h2>
+      <ul>
+        <li><strong>Kushagra Upadhyay</strong> – Scientist (SD), PRL ISRO<br>
+          Email: kushagraupadhyay77@gmail.com</li>
+        <li><strong>Dr. Navneet Agrawal</strong> – HOD ECE, CTAE<br>
+          Email: navneetctae@gmail.com</li>
+      </ul>
+    </section>
 
-  <div class="section">
-    <h2>Resume</h2>
-    <p><a href="https://drive.google.com/file/d/18VpI0h8LJcUHZg5HqLPxoVlcr41_vpED/view?usp=drivesdk">Download Resume (PDF)</a></p>
-  </div>
+    <section>
+      <h2>📄 Resume</h2>
+      <a href="https://drive.google.com/file/d/18VpI0h8LJcUHZg5HqLPxoVlcr41_vpED/view?usp=drivesdk">Download Resume (PDF)</a>
+    </section>
 
-  <div class="section">
-    <h2>Contact</h2>
-    <ul>
-      <li>Email: <a href="mailto:agarwalsitaram135@gmail.com">agarwalsitaram135@gmail.com</a></li>
-      <li>Phone: <a href="tel:+917726814279">+91 7726814279</a></li>
-      <li>LinkedIn: <a href="https://linkedin.com/in/ketan-agarwal-8a59a5199">linkedin.com/in/ketan-agarwal</a></li>
-      <li>GitHub: <a href="https://github.com/jakas1010">github.com/jakas1010</a></li>
-    </ul>
-  </div>
+    <section id="contact">
+      <h2>📬 Contact</h2>
+      <ul class="contact-list">
+        <li><i class="fas fa-envelope icon"></i><a href="mailto:agarwalsitaram135@gmail.com">agarwalsitaram135@gmail.com</a></li>
+        <li><i class="fas fa-phone icon"></i><a href="tel:+917726814279">+91 7726814279</a></li>
+        <li><i class="fab fa-linkedin icon"></i><a href="https://linkedin.com/in/ketan-agarwal-8a59a5199">LinkedIn</a></li>
+        <li><i class="fab fa-github icon"></i><a href="https://github.com/jakas1010">GitHub</a></li>
+        <li><i class="fas fa-link icon"></i><a href="https://bit.ly/Ketan-portfolio">bit.ly/Ketan-portfolio</a></li>
+      </ul>
+    </section>
 
+  </main>
 </body>
 </html>
